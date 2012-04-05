@@ -1,0 +1,15 @@
+fetching UIWebViews UserAgent
+
+## feature
+```objective-C
+- (void)viewDidLoad {
+    self.webView = [UIWebView webViewWithUserAgent:@"Sakura"];
+    self.webView.delegate = self;
+    [self.webView loadRequest:request];
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    [UIWebView resetUserAgent];
+    return YES;
+}
+```
